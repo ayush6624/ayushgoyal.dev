@@ -2,7 +2,9 @@ import React, { createContext, useState, useContext, useEffect } from 'react';
 import Cookies from 'js-cookie';
 import Router, { useRouter } from 'next/router';
 
-//api here is an axios instance
+// api here is an axios instance
+// I need to hit the cache when serving the site, so instead of using serverSideProps, I use Context API to pass states,
+// and use the pricinpal that the API is unauthenticated
 import api from './components/fetcher';
 
 const AuthContext = createContext({});
@@ -18,7 +20,7 @@ export const AuthProvider = ({ children }) => {
       if (token) {
         console.log("Got a token in the cookies, let's see if it is valid");
         api.defaults.headers.Authorization = `Bearer ${token}`;
-        const { data: user } = await api.get('/cloudflare');
+        const { data: user } = await api.get('/cloudflare'); // replace it with a /me endpoint containing info about the user
         if (user) setUser(user);
       }
       setLoading(false);
@@ -62,7 +64,7 @@ export function ProtectRoute(Component) {
     const router = useRouter();
 
     useEffect(() => {
-      if (!isAuthenticated && !loading) Router.push('/');
+      if (!isAuthenticated && !loading) Router.push('/login'); // isAuthenticated -> if user variable is not NULL, loading -> 401 is enough
     }, [loading, isAuthenticated]);
 
     return <Component {...arguments} />;
