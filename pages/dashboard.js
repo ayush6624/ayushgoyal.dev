@@ -12,7 +12,7 @@ function Dashboard() {
   }, [isValidating]);
   useEffect(() => console.log('loading  -> ', loading), [loading]);
   const showSkeleton = isValidating || loading;
-  // if (showSkeleton) return <Skeleton count={5} />;
+  if (showSkeleton) return <Skeleton count={5} />;
   return (
     <>
       <h1>Dashboard</h1>
@@ -21,5 +21,4 @@ function Dashboard() {
   );
 }
 
-// export default Dashboard;
 export default ProtectRoute(Dashboard);
