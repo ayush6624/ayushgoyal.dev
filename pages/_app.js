@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }) {
         </Head>
         <Navbar />
         <Component {...pageProps} />
-        <Footer switchTheme={switchThemes} />
+        <Footer switchTheme={switchThemes} mode={themeType} />
       </AuthProvider>
     </ZeitProvider>
   );

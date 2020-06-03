@@ -1,12 +1,8 @@
 import { Grid, Link, Text, Popover, useTheme } from '@zeit-ui/react';
 import { LogIn } from '@zeit-ui/react-icons';
 import { Moon, Sun } from '@zeit-ui/react-icons';
-import { useState } from 'react';
 
 const Footer = (props) => {
-  const theme = useTheme().type;
-  const [curr, setCurr] = useState(theme);
-
   const content = () => (
     <>
       <Popover.Item title>
@@ -36,25 +32,7 @@ const Footer = (props) => {
             ayushgoyal.dev
           </Text>
         </Link>
-        <Grid alignItems="center">
-          {curr === 'light' ? (
-            <Moon
-              size={30}
-              onClick={(_) => {
-                props.switchTheme();
-                setCurr('dark');
-              }}
-            />
-          ) : (
-            <Sun
-              size={30}
-              onClick={(_) => {
-                props.switchTheme();
-                setCurr('light');
-              }}
-            />
-          )}
-        </Grid>
+        <Grid alignItems="center">{props.mode === 'light' ? <Moon size={30} onClick={(_) => props.switchTheme()} /> : <Sun size={30} onClick={(_) => props.switchTheme()} />}</Grid>
       </Grid.Container>
     </>
   );
