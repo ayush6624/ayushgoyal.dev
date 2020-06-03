@@ -1,35 +1,31 @@
-import { Grid, Text, Button, Link, Spacer, Popover } from '@zeit-ui/react';
+import { Grid, Text, Button, Link, Spacer } from '@zeit-ui/react';
 import Nextlink from 'next/link';
+import Center from './Center';
 
-const Navbar = () => {
+const Navbar = (props) => {
   return (
     <>
+      <Spacer y={0.5} />
       <Grid.Container justify="space-around">
-        <Grid xs={8} lg={8} justify="center">
-          {/* <Text> */}
+        <Center xs={8}>
           <Nextlink href="/">
             <Link block underline color>
               <Text h2>Home</Text>
             </Link>
           </Nextlink>
-          {/* </Text> */}
-        </Grid>
-        <Grid xs={8} lg={8}>
-          {/* <Text> */}
+        </Center>
+        <Center xs={8}>
           <Nextlink href="/about">
             <Link block underline color>
               <Text h2>About</Text>
             </Link>
           </Nextlink>
-          {/* </Text> */}
-        </Grid>
-        <Grid xs={8} lg={8} justify="center">
-          {/* <Text> */}
+        </Center>
+        <Center xs={8}>
           <Link block underline icon color href="https://blog.ayushgoyal.dev" target="_blank">
             <Text h2>Blog</Text>
           </Link>
-          {/* </Text> */}
-        </Grid>
+        </Center>
       </Grid.Container>
     </>
   );

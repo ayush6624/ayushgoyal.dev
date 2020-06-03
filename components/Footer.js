@@ -1,7 +1,12 @@
-import { Grid, Text, Button, Link, Spacer, Popover } from '@zeit-ui/react';
+import { Grid, Link, Text, Popover, useTheme } from '@zeit-ui/react';
 import { LogIn } from '@zeit-ui/react-icons';
+import { Moon, Sun } from '@zeit-ui/react-icons';
+import { useState } from 'react';
 
-const Footer = () => {
+const Footer = (props) => {
+  const theme = useTheme().type;
+  const [curr, setCurr] = useState(theme);
+
   const content = () => (
     <>
       <Popover.Item title>
@@ -25,22 +30,32 @@ const Footer = () => {
   );
   return (
     <>
-      <Grid.Container justify="center">
-        <Grid>
-          <Link href="#" underline color block>
-            <Text h4 type="secondary">
-              <div className="footer_link">ayushgoyal.dev</div>
-            </Text>
-          </Link>
+      <Grid.Container justify="center" alignItems="center">
+        <Link href="#" underline color block>
+          <Text h4 type="success" style={{ letterSpacing: '1px', textDecoration: 'underline', textDecorationStyle: 'dashed' }}>
+            ayushgoyal.dev
+          </Text>
+        </Link>
+        <Grid alignItems="center">
+          {curr === 'light' ? (
+            <Moon
+              size={30}
+              onClick={(_) => {
+                props.switchTheme();
+                setCurr('dark');
+              }}
+            />
+          ) : (
+            <Sun
+              size={30}
+              onClick={(_) => {
+                props.switchTheme();
+                setCurr('light');
+              }}
+            />
+          )}
         </Grid>
       </Grid.Container>
-      <style jsx>{`
-        .footer_link {
-          letter-spacing: 1px;
-          text-decoration: underline;
-          text-decoration-style: dotted;
-        }
-      `}</style>
     </>
   );
 };
