@@ -14,13 +14,14 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    console.log('use effect');
+    console.log('HOC useEffect');
     async function loadUserFromCookies() {
       const token = Cookies.get('token');
       if (token) {
         console.log("Got a token in the cookies, let's see if it is valid");
         api.defaults.headers.Authorization = `Bearer ${token}`;
-        const { data: user } = await api.get('/cloudflare'); // replace it with a /me endpoint containing info about the user
+        let _id = window.localStorage.getItem('user');
+        const { data: user } = await api.get('/users/' + _id); // replace it with a /me endpoint containing info about the user
         if (user) setUser(user);
       }
       setLoading(false);
@@ -29,20 +30,19 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async (email, password) => {
-    console.log('email ->  ', email, 'password -> ', password);
-    const { data } = await api.post('/authentication', { email, password, strategy: 'local' });
-    let token = data.accessToken;
-    if (token) {
-      console.log('Got token');
-      console.log(token);
-      Cookies.set('token', token, { expires: 60 });
-      api.defaults.headers.Authorization = `Bearer ${token}`;
-      const { data } = await api.get('/cloudflare');
-      setUser(user);
-      console.log('Got user/cloudflare data', data);
+    try {
+      const { data } = await api.post('/authentication', { email, password, strategy: 'local' });
+      let token = data.accessToken;
+      if (token) {
+        Cookies.set('token', token, { expires: 60 });
+        api.defaults.headers.Authorization = `Bearer ${token}`;
+        window.localStorage.setItem('user', data.user._id);
+      }
+    } catch (err) {
+      console.log(err);
+      return Promise.reject('Incorrect Password');
     }
   };
-
   const logout = () => {
     Cookies.remove('token');
     setUser(null);
@@ -64,7 +64,7 @@ export function ProtectRoute(Component) {
     const router = useRouter();
 
     useEffect(() => {
-      if (!isAuthenticated && !loading) Router.push('/login'); // isAuthenticated -> if user variable is not NULL, loading -> 401 is enough
+      if (!isAuthenticated && !loading) Router.push('/login');
     }, [loading, isAuthenticated]);
 
     return <Component {...arguments} />;
