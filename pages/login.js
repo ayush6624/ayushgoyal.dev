@@ -4,16 +4,25 @@ import useAuth, { ProtectRoute } from '../auth_context';
 import Center from '../components/Center';
 import { FcGoogle } from 'react-icons/fc';
 import { LogIn, User, Lock, AlertCircle } from '@zeit-ui/react-icons';
-import { useRouter } from 'next/router';
+import { GoogleLogin } from 'react-google-login';
 
 function Login() {
-  const { login, logout, user, loading, isAuthenticated } = useAuth();
-  const router = useRouter();
+  const { login, oauth_login, logout, user, loading, isAuthenticated } = useAuth();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(false);
+  useEffect(() => {
+    console.log('once to check if account exists');
+  }, []);
+  const Google_Login_Button = (props) => {
+    return (
+      <Button type="secondary" shadow onClick={props.onClick}>
+        <FcGoogle />
+      </Button>
+    );
+  };
 
   const emailCallback = useCallback(
     (e) => {
@@ -35,12 +44,12 @@ function Login() {
     setLoaded(true);
     try {
       await login(email, password);
-      router.push('/dashboard');
     } catch (err) {
       setError(true);
     }
     setLoaded(false);
   };
+
   return (
     <div style={{ minHeight: '81vh', justifyContent: 'center', alignItems: 'center', display: 'flex', flexDirection: 'column' }}>
       <Grid.Container gap={1} justify="center" alignItems="center" direction="column">
@@ -63,9 +72,7 @@ function Login() {
           </Button>
         </Grid>
         <Grid>
-          <Button type="secondary" size="small" shadow>
-            <FcGoogle />
-          </Button>
+          <GoogleLogin render={(props) => Google_Login_Button(props)} clientId={process.env.NEXT_PUBLIC_GOOGLE_OAUTH_KEY} onSuccess={(resp) => oauth_login(resp, 'google')} onFailure={(resp) => console.log(resp)} cookiePolicy={'single_host_origin'} />
         </Grid>
       </Grid.Container>
     </div>

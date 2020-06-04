@@ -37,19 +37,41 @@ export const AuthProvider = ({ children }) => {
         Cookies.set('token', token, { expires: 60 });
         api.defaults.headers.Authorization = `Bearer ${token}`;
         window.localStorage.setItem('user', data.user._id);
+        window.location.pathname = '/dashboard';
+        // Router.push('/dashboard');
       }
     } catch (err) {
       console.log(err);
       return Promise.reject('Incorrect Password');
     }
   };
-  const logout = () => {
-    Cookies.remove('token');
-    setUser(null);
-    window.location.pathname = '/login';
+
+  const oauth_login = async (response, strategy) => {
+    const { accessToken: access_token } = response;
+    try {
+      const { data } = await api.post('/authentication', { access_token, strategy });
+      Cookies.set('token', data.accessToken, { expires: 60 });
+      api.defaults.headers.Authorization = `Bearer ${data.accessToken}`;
+      window.localStorage.setItem('user', data.user._id);
+      console.log('oauth login successful');
+      window.location.pathname = '/dashboard';
+      // Router.push('/dashboard');
+    } catch (err) {
+      console.log(err);
+      console.log('Error In Google OAuth');
+    }
   };
 
-  return <AuthContext.Provider value={{ isAuthenticated: !!user, user, login, loading, logout }}>{children}</AuthContext.Provider>;
+  const logout = () => {
+    console.log('log out');
+    Cookies.remove('token');
+    setUser(null);
+    window.localStorage.removeItem('user');
+    window.location.pathname = '/login';
+    // Router.push('/login');
+  };
+
+  return <AuthContext.Provider value={{ isAuthenticated: !!user, user, login, oauth_login, loading, logout }}>{children}</AuthContext.Provider>;
 };
 
 export default function useAuth() {
@@ -61,7 +83,7 @@ export default function useAuth() {
 export function ProtectRoute(Component) {
   return () => {
     const { user, isAuthenticated, loading } = useAuth();
-    const router = useRouter();
+    // const router = useRouter();
 
     useEffect(() => {
       if (!isAuthenticated && !loading) Router.push('/login');

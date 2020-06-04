@@ -3,9 +3,11 @@ import useAuth, { ProtectRoute } from '../auth_context';
 import useSWR from 'swr';
 import api from '../components/fetcher';
 import Skeleton from 'react-loading-skeleton';
+import { GoogleLogout } from 'react-google-login';
+import { Text, Button, Grid, Input } from '@zeit-ui/react';
 
 function Dashboard() {
-  const { user, loading } = useAuth();
+  const { user, loading, logout } = useAuth();
   const { data: { data } = {}, isValidating } = useSWR(loading ? false : '/cloudflare', api.get);
   useEffect(() => console.log('isValidating -> ', isValidating), [isValidating]);
   useEffect(() => console.log('loading  -> ', loading), [loading]);
@@ -15,6 +17,9 @@ function Dashboard() {
     <>
       <h1>Dashboard</h1>
       {JSON.stringify(user)}
+      <Button type="secondary" shadow onClick={(_) => logout()}>
+        Logout
+      </Button>
     </>
   );
 }
