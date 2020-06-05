@@ -15,9 +15,9 @@ const Navbar = (props) => {
           </Nextlink>
         </Center>
         <Center xs={8}>
-          <Nextlink href="/about">
+          <Nextlink href="/contact">
             <Link block underline color>
-              <Text h2>About</Text>
+              <Text h2>Contact</Text>
             </Link>
           </Nextlink>
         </Center>
