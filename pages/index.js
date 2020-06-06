@@ -1,6 +1,5 @@
 import { Grid, Text, Button, Link, Spacer, Popover, useMediaQuery } from '@zeit-ui/react';
 import Center from '../components/Center';
-import { useEffect, useState } from 'react';
 
 const Home = () => {
   const CustomText = ({ size, children }) => {
@@ -10,6 +9,9 @@ const Home = () => {
       </Text>
     );
   };
+
+  const Underline = ({ children, italic }) => <span style={{ fontStyle: italic ? 'italic' : 'normal', textDecoration: 'underline' }}>{children}</span>;
+
   return (
     <>
       <div style={{ minHeight: '85vh', justifyContent: 'center', alignItems: 'center', display: 'flex', flexDirection: 'column' }}>
@@ -22,7 +24,7 @@ const Home = () => {
           </Center>
           <Center>
             <CustomText size="2em">
-              I am a <span style={{ textDecoration: 'underline' }}>software developer</span>, a <span style={{ textDecoration: 'underline' }}>full-time CS student</span>, and a <span style={{ textDecoration: 'underline' }}>ML enthusiast</span>.
+              I am a <Underline>software developer</Underline>, a <Underline>full-time CS student</Underline>, and a <Underline>ML enthusiast</Underline>.
             </CustomText>
           </Center>
           <Center>
@@ -30,20 +32,23 @@ const Home = () => {
           </Center>
           <Center>
             <CustomText size="1.5em">
-              I have experience working with <span style={{ fontStyle: 'italic' }}>Python, NodeJS & React</span>.
+              I have experience working with <Underline italic>Python</Underline>, <Underline italic>NodeJS</Underline>, <Underline italic>React</Underline> & <Underline italic>Tensorflow</Underline>. I'm open for SDE Intern Oppurtunities.{' '}
+              <Link color href="/ayush-resume.pdf" target="_blank">
+                Resume
+              </Link>
             </CustomText>
           </Center>
           <Center>
             <CustomText size="1.2rem">
               You'll find me browsing{' '}
-              <Link href="https://twitter.com/ayushg1214" target="_blank" color style={{ textDecoration: 'underline' }}>
+              <Link href="https://twitter.com/ayushg1214" target="_blank" style={{ textDecoration: 'underline' }}>
                 Twitter
               </Link>
-              , and playing<Text i> Call of Duty</Text>. Read Home what I'm learning on my{' '}
-              <Link href="https://blog.ayushgoyal.dev" target="_blank" color style={{ textDecoration: 'underline' }}>
+              , working on my side projects, <span style={{ fontStyle: 'italic' }}>or ,</span> playing<Text i> Call of Duty</Text>. Read about what I'm learning on my{' '}
+              <Link color href="https://blog.ayushgoyal.dev" target="_blank" style={{ textDecoration: 'underline' }}>
                 blog
               </Link>
-              . It's updated every time I make a breakthrough worth mentioning. I'm currently learning more Home Software Engineering & Computer Science fundamentals.
+              . It's updated every time I make a breakthrough worth mentioning. I'm currently learning more about Software Engineering & Computer Science fundamentals.
             </CustomText>
           </Center>
         </Grid.Container>

@@ -29,6 +29,11 @@ function MyApp({ Component, pageProps }) {
         </Head>
         <Navbar />
         <Component {...pageProps} />
+        <style jsx global>{`
+          ::-webkit-scrollbar {
+            display: none;
+          }
+        `}</style>
         <Footer switchTheme={switchThemes} mode={themeType} />
       </AuthProvider>
     </ZeitProvider>
