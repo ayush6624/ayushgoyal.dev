@@ -22,7 +22,7 @@ const Navbar = (props) => {
           </Nextlink>
         </Center>
         <Center xs={8}>
-          <Link block underline icon color href="https://blog.ayushgoyal.dev" target="_blank">
+          <Link block underline icon color href="https://blog.ayushgoyal.dev?utm_source=website" target="_blank">
             <Text h2>Blog</Text>
           </Link>
         </Center>

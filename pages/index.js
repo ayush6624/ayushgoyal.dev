@@ -24,7 +24,7 @@ const Home = () => {
           </Center>
           <Center>
             <CustomText size="2em">
-              I am a <Underline>software developer</Underline>, a <Underline>full-time CS student</Underline>, and a <Underline>ML enthusiast</Underline>.
+              I am a <Underline>software developer</Underline>, a <Underline>full-time IT undergrad</Underline> @DCE, and a <Underline>ML enthusiast</Underline>.
             </CustomText>
           </Center>
           <Center>
@@ -32,7 +32,7 @@ const Home = () => {
           </Center>
           <Center>
             <CustomText size="1.5em">
-              I have experience working with <Underline italic>Python</Underline>, <Underline italic>NodeJS</Underline>, <Underline italic>React</Underline> & <Underline italic>Tensorflow</Underline>. I'm open for SDE Intern Oppurtunities.{' '}
+              I have experience working with <Underline italic>Python</Underline>, <Underline italic>NodeJS</Underline>, <Underline italic>React</Underline> & <Underline italic>Tensorflow</Underline>. I'm currently open for SDE Intern Roles.{' '}
               <Link color href="/ayush-resume.pdf" target="_blank">
                 Resume
               </Link>
@@ -44,11 +44,24 @@ const Home = () => {
               <Link href="https://twitter.com/ayushg1214" target="_blank" style={{ textDecoration: 'underline' }}>
                 Twitter
               </Link>
-              , working on my side projects, <span style={{ fontStyle: 'italic' }}>or ,</span> playing<Text i> Call of Duty</Text>. Read about what I'm learning on my{' '}
-              <Link color href="https://blog.ayushgoyal.dev" target="_blank" style={{ textDecoration: 'underline' }}>
+              , working on my side projects, <span style={{ fontStyle: 'italic' }}>or,</span> playing<Text i> Call of Duty</Text>. Read about what I'm learning on my{' '}
+              <Link color href="https://blog.ayushgoyal.dev?utm_source=website" target="_blank" style={{ textDecoration: 'underline' }}>
                 blog
               </Link>
-              . It's updated every time I make a breakthrough worth mentioning. I'm currently learning more about Software Engineering & Computer Science fundamentals.
+              . I try to update it every time I make a breakthrough worth mentioning. I'm currently learning more about Software Development & Computer Science fundamentals.
+            </CustomText>
+          </Center>
+          <Center>
+            <CustomText size="1.2rem">
+              I'm also on{' '}
+              <Link color href="https://www.linkedin.com/in/ayush-goyal6624" target="_blank" style={{ textDecoration: 'underline' }}>
+                LinkedIn
+              </Link>{' '}
+              and{' '}
+              <Link color href="https://github.com/ayush6624" target="_blank" style={{ textDecoration: 'underline' }}>
+                Github
+              </Link>
+              .
             </CustomText>
           </Center>
         </Grid.Container>
