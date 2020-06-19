@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import useAuth, { ProtectRoute } from '../auth_context';
+import useAuth, { ProtectRoute } from '../lib/auth_context';
 import useSWR from 'swr';
 import api from '../components/fetcher';
 import Skeleton from 'react-loading-skeleton';

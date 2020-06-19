@@ -1,6 +1,6 @@
 import { Text, Button, Grid, Input } from '@zeit-ui/react';
 import React, { useEffect, useState, useCallback } from 'react';
-import useAuth, { ProtectRoute } from '../auth_context';
+import useAuth, { ProtectRoute } from '../lib/auth_context';
 import Center from '../components/Center';
 import { FcGoogle } from 'react-icons/fc';
 import { LogIn, User, Lock, AlertCircle } from '@zeit-ui/react-icons';

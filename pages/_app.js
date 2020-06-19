@@ -1,4 +1,4 @@
-import { AuthProvider } from '../auth_context';
+import { AuthProvider } from '../lib/auth_context';
 import { CssBaseline, ZeitProvider } from '@zeit-ui/react';
 import Router from 'next/router';
 import { useState, useEffect } from 'react';

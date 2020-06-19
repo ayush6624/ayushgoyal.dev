@@ -44,11 +44,11 @@ const Home = () => {
               <Link href="https://twitter.com/ayushg1214" target="_blank" style={{ textDecoration: 'underline' }}>
                 Twitter
               </Link>
-              , working on my side projects, <span style={{ fontStyle: 'italic' }}>or,</span> playing<Text i> Call of Duty</Text>. Read about what I'm learning on my{' '}
-              <Link color href="https://blog.ayushgoyal.dev?utm_source=website" target="_blank" style={{ textDecoration: 'underline' }}>
+              , working on side projects, <span style={{ fontStyle: 'italic' }}> or </span> playing<Text i> Call of Duty</Text>. Read about what I'm learning on my{' '}
+              <Link color href="https://blog.ayushgoyal.dev" target="_blank" style={{ textDecoration: 'underline' }}>
                 blog
               </Link>
-              . I try to update it every time I make a breakthrough worth mentioning. I'm currently learning more about Software Development & Computer Science fundamentals.
+              . I try updating it every time I make a breakthrough worth mentioning. I'm currently learning more about Software Development & Computer Science fundamentals.
             </CustomText>
           </Center>
           <Center>
