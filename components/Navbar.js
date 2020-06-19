@@ -15,14 +15,14 @@ const Navbar = (props) => {
           </Nextlink>
         </Center>
         <Center xs={8}>
-          <Nextlink href="/contact">
+          <Nextlink href="/about">
             <Link block underline color>
-              <Text h2>Contact</Text>
+              <Text h2>About</Text>
             </Link>
           </Nextlink>
         </Center>
         <Center xs={8}>
-          <Link block underline icon color href="https://blog.ayushgoyal.dev?utm_source=website" target="_blank">
+          <Link block underline icon color href="https://blog.ayushgoyal.dev" target="_blank">
             <Text h2>Blog</Text>
           </Link>
         </Center>
