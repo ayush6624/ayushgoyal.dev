@@ -18,13 +18,12 @@ export interface WakatimeStats {
 const codeStat = (data: Wakatime) => {
   let stats: WakatimeStats[] = [];
   let lang = data.languages;
-
   Object.entries(lang).forEach(([key, val]) => {
     const time: string[] = val.split(' ');
     let hour: number = 0;
     let min: number = 0;
     if (time.length == 2) {
-      min += parseInt(time[0]);
+      time[1].includes('hr') ? (min += 60 * parseInt(time[0])) : (min += parseInt(time[0]));
     } else {
       hour += parseInt(time[0]);
       min += parseInt(time[2]);
