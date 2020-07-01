@@ -1,12 +1,21 @@
 import React from 'react';
-import { Text } from '@zeit-ui/react';
+import { Text, Loading } from '@zeit-ui/react';
 import Center from '../components/Center';
-import api from '../components/fetcher';
 import codeStat from '../lib/codeStat';
 import TimeGraph from '../components/TimeGraph';
+import getTimeStats from '../lib/codeTimeFetch';
 
-const About = (data) => {
-  const { stats, colors } = codeStat(data);
+const About = () => {
+  const { data, isLoading, isError } = getTimeStats();
+  if (isLoading) return <Loading size="large" />;
+  if (isError)
+    return (
+      <Loading type="error" size="large">
+        Error
+      </Loading>
+    );
+  const { stats, colors } = codeStat(data.data.data[0]);
+
   return (
     <>
       <Center>
@@ -15,17 +24,6 @@ const About = (data) => {
       </Center>
     </>
   );
-};
-
-export const getStaticProps = async () => {
-  const {
-    data: { data },
-  } = await api.get('/wakatime');
-
-  return {
-    props: data[0],
-    unstable_revalidate: 1800,
-  };
 };
 
 export default About;
