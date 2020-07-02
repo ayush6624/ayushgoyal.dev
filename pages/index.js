@@ -28,7 +28,7 @@ const Home = () => {
             </CustomText>
           </Center>
           <Center>
-            <CustomText size="1.5em">Some of my interests include building performant Web Apps, Deep Learning and Computer Vision.</CustomText>
+            <CustomText size="1.5em">Some of my interests include building performant Web Apps and Deep Learning.</CustomText>
           </Center>
           <Center>
             <CustomText size="1.5em">
@@ -61,7 +61,8 @@ const Home = () => {
               <Link color href="https://github.com/ayush6624" target="_blank" style={{ textDecoration: 'underline' }}>
                 Github
               </Link>
-              .
+              <br />
+              Email: hi@ayushgoyal.dev
             </CustomText>
           </Center>
         </Grid.Container>
