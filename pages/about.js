@@ -1,9 +1,10 @@
 import React from 'react';
-import { Text, Loading } from '@zeit-ui/react';
+import { Text, Loading, Grid, Capacity } from '@zeit-ui/react';
 import Center from '../components/Center';
 import codeStat from '../lib/codeStat';
 import TimeGraph from '../components/TimeGraph';
 import getTimeStats from '../lib/codeTimeFetch';
+import Internet from '../components/Internet';
 
 const About = () => {
   const { data, isLoading, isError } = getTimeStats();
@@ -19,8 +20,9 @@ const About = () => {
   return (
     <>
       <Center>
-        <Text h1>About</Text>
+        <Text h2>Stats</Text>
         <TimeGraph stats={stats} colors={colors} />
+        <Internet />
       </Center>
     </>
   );
