@@ -12,17 +12,17 @@
     "@zeit-ui/react-icons": "^1.2.2",
     "axios": "^0.21.0",
     "js-cookie": "^2.2.1",
-    "next": "10.0.0",
+    "next": "10.0.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-google-login": "^5.1.20",
     "react-icons": "^3.10.0",
     "react-loading-skeleton": "^2.0.1",
     "rough-charts": "^0.5.0",
-    "swr": "^0.3.6"
+    "swr": "^0.3.8"
   },
   "devDependencies": {
-    "@types/node": "^14.0.13",
+    "@types/node": "^14.14.6",
     "typescript": "^4.0.5"
   }
 }
