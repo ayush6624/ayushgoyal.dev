@@ -1,4 +1,4 @@
-import { Grid, Text, Button, Link, Spacer } from '@zeit-ui/react';
+import { Grid, Text, Button, Link, Spacer } from '@geist-ui/react';
 import Nextlink from 'next/link';
 import Center from './Center';
 

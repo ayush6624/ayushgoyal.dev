@@ -1,4 +1,4 @@
-import { Grid, Text, Button, Link, Spacer, Popover, useMediaQuery } from '@zeit-ui/react';
+import { Grid, Text, Button, Link, Spacer, Popover, useMediaQuery } from '@geist-ui/react';
 import Center from '../components/Center';
 
 const Home = () => {

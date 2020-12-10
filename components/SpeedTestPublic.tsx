@@ -1,5 +1,5 @@
-import { Loading, Grid } from '@zeit-ui/react';
-import { DownloadCloud, UploadCloud } from '@zeit-ui/react-icons';
+import { Loading, Grid } from '@geist-ui/react';
+import { DownloadCloud, UploadCloud } from '@geist-ui/react-icons';
 import speedTest from '../lib/speedTest';
 
 const SpeedTestPublic = () => {

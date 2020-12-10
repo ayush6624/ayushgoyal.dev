@@ -1,4 +1,4 @@
-import { Capacity, Loading, Grid, Text, Badge, Spacer } from '@zeit-ui/react';
+import { Capacity, Loading, Grid, Text, Badge, Spacer } from '@geist-ui/react';
 import ispDataUsage from '../lib/ispDataUsage';
 import SpeedTestPublic from './SpeedTestPublic';
 

@@ -1,6 +1,6 @@
-import { Grid, Link, Text, Popover, useTheme } from '@zeit-ui/react';
-import { LogIn } from '@zeit-ui/react-icons';
-import { Moon, Sun } from '@zeit-ui/react-icons';
+import { Grid, Link, Text, Popover, useTheme } from '@geist-ui/react';
+import { LogIn } from '@geist-ui/react-icons';
+import { Moon, Sun } from '@geist-ui/react-icons';
 
 const Footer = (props) => {
   const content = () => (

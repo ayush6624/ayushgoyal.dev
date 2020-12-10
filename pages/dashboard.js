@@ -4,7 +4,7 @@ import useSWR from 'swr';
 import api from '../components/fetcher';
 import Skeleton from 'react-loading-skeleton';
 import { GoogleLogout } from 'react-google-login';
-import { Text, Button, Grid, Input } from '@zeit-ui/react';
+import { Text, Button, Grid, Input } from '@geist-ui/react';
 
 function Dashboard() {
   const { user, loading, logout } = useAuth();

@@ -1,4 +1,4 @@
-import { Grid } from '@zeit-ui/react';
+import { Grid } from '@geist-ui/react';
 
 const Center = ({ children, ...props }) => {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Loading, Grid, Capacity } from '@zeit-ui/react';
+import { Text, Loading, Grid, Capacity } from '@geist-ui/react';
 import Center from '../components/Center';
 import codeStat from '../lib/codeStat';
 import TimeGraph from '../components/TimeGraph';

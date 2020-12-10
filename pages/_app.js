@@ -1,5 +1,5 @@
 import { AuthProvider } from '../lib/auth_context';
-import { CssBaseline, ZeitProvider } from '@zeit-ui/react';
+import { GeistProvider, CssBaseline } from '@geist-ui/react';
 import Router from 'next/router';
 import { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }) {
   const switchThemes = () => setThemeType((lastThemeType) => (lastThemeType === 'dark' ? 'light' : 'dark'));
 
   return (
-    <ZeitProvider theme={{ type: themeType }}>
+    <GeistProvider theme={{ type: themeType }}>
       <CssBaseline />
       <AuthProvider>
         <Head>
@@ -36,7 +36,7 @@ function MyApp({ Component, pageProps }) {
         `}</style>
         <Footer switchTheme={switchThemes} mode={themeType} />
       </AuthProvider>
-    </ZeitProvider>
+    </GeistProvider>
   );
 }
 
