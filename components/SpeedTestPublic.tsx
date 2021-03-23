@@ -6,7 +6,7 @@ const SpeedTestPublic = () => {
   const { data, isError, isLoading } = speedTest();
   if (isLoading) return <Loading />;
   if (isError) return <Loading type="error">Error</Loading>;
-  const used: Array<any> = data.data;
+  // const used: Array<any> = data.data;
   return (
     <Grid.Container justify="center" gap={3}>
       <Grid>

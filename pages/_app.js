@@ -23,8 +23,24 @@ function MyApp({ Component, pageProps }) {
       <CssBaseline />
       <AuthProvider>
         <Head>
-          {/* <meta name="viewport" content="width=device-width, initial-scale=1.0" /> */}
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
           <title>Ayush Goyal</title>
+          <meta name="title" content="Ayush Goyal" />
+          <meta name="description" content="I'm a 19 year old IT Undergrad at Delhi Technological University (DTU/DCE), who loves playing around with the Web and Machine Learning." />
+
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://ayushgoyal.dev/" />
+          <meta property="og:title" content="Ayush Goyal" />
+          <meta property="og:description" content="I'm a 19 year old IT Undergrad at Delhi Technological University (DTU/DCE), who loves playing around with the Web and Machine Learning." />
+          <meta property="og:image" content="" />
+
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta property="twitter:url" content="https://ayushgoyal.dev/" />
+          <meta property="twitter:title" content="Ayush Goyal" />
+          <meta property="twitter:description" content="I'm a 19 year old IT Undergrad at Delhi Technological University (DTU/DCE), who loves playing around with the Web and Machine Learning." />
+          <meta property="twitter:image" content="" />
+
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <Navbar />

@@ -25,13 +25,14 @@ class MyDocument extends Document {
         <Head />
         <>
           <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
+          <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "551f00d3bd54409e898731559ae1bf70"}'></script>
           <script
             dangerouslySetInnerHTML={{
               __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${GA_TRACKING_ID}');
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA_TRACKING_ID}');
               `,
             }}
           />
