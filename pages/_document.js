@@ -40,7 +40,7 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          {/* <img src="https://a.ayushgoyal.dev/hello.png?id=website"></img> */}
+          <img src="https://a.ayushgoyal.dev/website/hello.png"></img>
         </body>
       </Html>
     );
