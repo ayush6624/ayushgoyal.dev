@@ -17,6 +17,7 @@ const Internet = () => {
   if (isLoading) return <Loading />;
   if (isError) return <Loading type="error">Error</Loading>;
   const used: Data = data.data;
+  if (used.tot_data === '') used.tot_data = '1000';
   const value: number = (parseFloat(used.used_data) / parseFloat(used.tot_data)) * 100;
   return (
     <Grid.Container gap={2} justify="center" alignItems="center" direction="column">
