@@ -1,21 +1,25 @@
 import { Text, Button, Grid, Input } from '@geist-ui/react';
 import React, { useEffect, useState, useCallback } from 'react';
 import Center from '../components/Center';
+import { BASE_URL } from '../lib/url';
 import { FcGoogle } from 'react-icons/fc';
 import { LogIn, User, Lock, AlertCircle } from '@geist-ui/react-icons';
 import { GoogleLogin } from 'react-google-login';
 import { signin, signIn, signOut, useSession } from 'next-auth/client';
+import { useRouter } from 'next/router';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(false);
+  const router = useRouter();
 
   const [session] = useSession();
 
   useEffect(() => {
     console.log(session);
+    if (session) router.push('/dashboard');
   }, [session]);
 
   const Google_Login_Button = (props) => {
@@ -118,7 +122,9 @@ function Login() {
         </Grid>
         <Button
           onClick={() => {
-            signin('google', { callbackUrl: 'http://localhost:3000/dashboard' });
+            signin('google', {
+              callbackUrl: `${BASE_URL}/dashboard`,
+            });
           }}
         >
           Sign In With Google
