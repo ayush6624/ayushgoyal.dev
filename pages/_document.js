@@ -2,7 +2,9 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { CssBaseline } from '@geist-ui/react';
 
 let GA_TRACKING_ID = 'UA-134274140-1';
-if (process.env.NODE_ENV !== 'production') GA_TRACKING_ID = '';
+let CF_TRACKING_ID = { token: '551f00d3bd54409e898731559ae1bf70' };
+if (process.env.NODE_ENV !== 'production')
+  (GA_TRACKING_ID = ''), (CF_TRACKING_ID = '');
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);
@@ -24,8 +26,16 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head />
         <>
-          <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
-          <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "551f00d3bd54409e898731559ae1bf70"}'></script>
+          {process.env.NODE_ENV === 'production'}
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+          />
+          <script
+            defer
+            src="https://static.cloudflareinsights.com/beacon.min.js"
+            data-cf-beacon={JSON.stringify(CF_TRACKING_ID)}
+          ></script>
           <script
             dangerouslySetInnerHTML={{
               __html: `
