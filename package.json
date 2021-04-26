@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "doppler run -- next dev",
-    "build": "doppler run -- next build",
+    "build": "next build",
     "start": "next start",
     "migrate": "doppler run -- yarn prisma migrate dev",
     "studio": "doppler run -- yarn prisma studio"
