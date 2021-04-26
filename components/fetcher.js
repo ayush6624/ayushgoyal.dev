@@ -2,7 +2,7 @@ import Axios from 'axios';
 
 let url = '';
 
-process.env.NODE_ENV !== 'production' ? (url = 'http://localhost:3030') : (url = 'https://api.ayushgoyal.dev');
+process.env.NODE_ENV !== 'production' ? (url = 'https://api.ayushgoyal.dev') : (url = 'https://api.ayushgoyal.dev');
 
 const api = Axios.create({
   baseURL: url,
