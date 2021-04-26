@@ -1,21 +1,23 @@
 import { Text, Button, Grid, Input } from '@geist-ui/react';
 import React, { useEffect, useState, useCallback } from 'react';
-import useAuth, { ProtectRoute } from '../lib/auth_context';
 import Center from '../components/Center';
 import { FcGoogle } from 'react-icons/fc';
 import { LogIn, User, Lock, AlertCircle } from '@geist-ui/react-icons';
 import { GoogleLogin } from 'react-google-login';
+import { signin, signIn, signOut, useSession } from 'next-auth/client';
 
 function Login() {
-  const { login, oauth_login, logout, user, loading, isAuthenticated } = useAuth();
-
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(false);
+
+  const [session] = useSession();
+
   useEffect(() => {
-    console.log('once to check if account exists');
-  }, []);
+    console.log(session);
+  }, [session]);
+
   const Google_Login_Button = (props) => {
     return (
       <Button type="secondary" shadow onClick={props.onClick}>
@@ -51,29 +53,76 @@ function Login() {
   };
 
   return (
-    <div style={{ minHeight: '81vh', justifyContent: 'center', alignItems: 'center', display: 'flex', flexDirection: 'column' }}>
-      <Grid.Container gap={1} justify="center" alignItems="center" direction="column">
+    <div
+      style={{
+        minHeight: '81vh',
+        justifyContent: 'center',
+        alignItems: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+      }}
+    >
+      <Grid.Container
+        gap={1}
+        justify="center"
+        alignItems="center"
+        direction="column"
+      >
         <Grid>
           <Text h1>Sign In </Text>
         </Grid>
         <Grid>
-          <Input type="email" icon={<User />} onChange={emailCallback} clearable placeholder="email@gmail.com" onClearClick={(_) => setEmail('')}>
+          <Input
+            type="email"
+            icon={<User />}
+            onChange={emailCallback}
+            clearable
+            placeholder="email@gmail.com"
+            onClearClick={(_) => setEmail('')}
+          >
             Username
           </Input>
         </Grid>
         <Grid>
-          <Input.Password status={error ? 'warning' : 'default'} icon={<Lock />} onChange={passwordCallback} placeholder="********" onKeyDown={(e) => (e.key === 'Enter' ? login_now() : '')}>
+          <Input.Password
+            status={error ? 'warning' : 'default'}
+            icon={<Lock />}
+            onChange={passwordCallback}
+            placeholder="********"
+            onKeyDown={(e) => (e.key === 'Enter' ? login_now() : '')}
+          >
             Password
           </Input.Password>
         </Grid>
         <Grid>
-          <Button type={error ? 'error' : 'success'} size="large" loading={loaded} shadow onClick={(e) => login_now(e)}>
-            <div style={{ paddingTop: '5px', paddingBottom: '5px' }}>{error ? <AlertCircle /> : <LogIn />}</div>
+          <Button
+            type={error ? 'error' : 'success'}
+            size="large"
+            loading={loaded}
+            shadow
+            onClick={(e) => login_now(e)}
+          >
+            <div style={{ paddingTop: '5px', paddingBottom: '5px' }}>
+              {error ? <AlertCircle /> : <LogIn />}
+            </div>
           </Button>
         </Grid>
         <Grid>
-          <GoogleLogin render={(props) => Google_Login_Button(props)} clientId={process.env.NEXT_PUBLIC_GOOGLE_OAUTH_KEY} onSuccess={(resp) => oauth_login(resp, 'google')} onFailure={(resp) => console.log(resp)} cookiePolicy={'single_host_origin'} />
+          <GoogleLogin
+            render={(props) => Google_Login_Button(props)}
+            clientId={process.env.NEXT_PUBLIC_GOOGLE_OAUTH_KEY}
+            onSuccess={(resp) => oauth_login(resp, 'google')}
+            onFailure={(resp) => console.log(resp)}
+            cookiePolicy={'single_host_origin'}
+          />
         </Grid>
+        <Button
+          onClick={() => {
+            signin('google', { callbackUrl: 'http://localhost:3000/dashboard' });
+          }}
+        >
+          Sign In With Google
+        </Button>
       </Grid.Container>
     </div>
   );
