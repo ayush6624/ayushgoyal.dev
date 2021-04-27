@@ -39,5 +39,7 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 ## Prisma
+
 1. Run `yarn prisma db pull` to turn your database schema into a Prisma data model.
 2. Run `yarn prisma generate` to install Prisma Client. You can then start querying your database.
+3. `yarn migrate` does doppler+migration+generation

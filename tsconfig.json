@@ -25,5 +25,5 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ]
+, "pages/api/dns/index.js", "pages/dns.tsx"  ]
 }
