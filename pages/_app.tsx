@@ -6,7 +6,7 @@ import Script from 'next/script';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <main>
+    <main className='h-screen w-screen'> 
       <Script
         strategy="afterInteractive"
         src="https://a.ayushgoyal.dev/latest.js"
