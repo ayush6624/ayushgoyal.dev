@@ -5,7 +5,7 @@ import {
   useContext,
   ReactNode,
 } from 'react';
-import { supabase } from '../utils/initSupabase';
+import { supabase } from '@/utils/initSupabase';
 import { useRouter } from 'next/router';
 import { AuthSession, User } from '@supabase/supabase-js';
 

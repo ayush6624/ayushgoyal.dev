@@ -1,10 +1,9 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
-import { Fragment } from 'react'
-import { Menu, Transition } from '@headlessui/react'
-import { UserCircleIcon } from '@heroicons/react/outline'
-import classNames from '../../utils/classsesNames'
-
-import { SignOut } from '../../hooks/authUser'
+import { Fragment } from 'react';
+import { Menu, Transition } from '@headlessui/react';
+import { UserCircleIcon } from '@heroicons/react/outline';
+import classNames from '@/utils/classsesNames';
+import { SignOut } from '@/hooks/authUser';
 
 const MenuLogado = () => (
   <Menu as="div" className="ml-3 relative">
@@ -57,7 +56,10 @@ const MenuLogado = () => (
               )}
             </Menu.Item>
             <Menu.Item>
-              <button onClick={() => SignOut()} className="block px-4 py-2 text-sm text-gray-700">
+              <button
+                onClick={() => SignOut()}
+                className="block px-4 py-2 text-sm text-gray-700"
+              >
                 Sign out
               </button>
             </Menu.Item>
@@ -66,6 +68,6 @@ const MenuLogado = () => (
       </>
     )}
   </Menu>
-)
+);
 
-export default MenuLogado
+export default MenuLogado;

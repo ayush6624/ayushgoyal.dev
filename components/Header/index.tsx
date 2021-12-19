@@ -1,12 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
-import React from 'react'
-import AuthUser from '../../hooks/authUser'
-import { Disclosure } from '@headlessui/react'
-import { MenuIcon, XIcon } from '@heroicons/react/outline'
-import MenuLogado from './menuLogado'
-import MenuNotLogado from './menuNotLogado'
-import Navigation from './navigation'
-import classNames from '../../utils/classsesNames'
+import React from 'react';
+import AuthUser from '@/hooks/authUser';
+import { Disclosure } from '@headlessui/react';
+import { MenuIcon, XIcon } from '@heroicons/react/outline';
+import MenuLogado from './menuLogado';
+import MenuNotLogado from './menuNotLogado';
+import Navigation from './navigation';
+import classNames from '@/utils/classsesNames';
 
 export default function Header() {
   return (
@@ -84,5 +84,5 @@ export default function Header() {
         </>
       )}
     </Disclosure>
-  )
+  );
 }

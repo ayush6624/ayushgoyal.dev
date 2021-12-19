@@ -1,13 +1,13 @@
-import React from 'react'
-import { AuthRedirect } from '../hooks/authUser'
-import { supabase } from '../utils/initSupabase'
-import { Auth, Card, Typography, Space } from '@supabase/ui'
+import React from 'react';
+import { AuthRedirect } from '@/hooks/authUser';
+import { supabase } from '@/utils/initSupabase';
+import { Auth, Card, Typography, Space } from '@supabase/ui';
 
-import Head from '../components/Head'
-import Header from '../components/Header'
+import Head from '@/components/Head';
+import Header from '@/components/Header';
 
 const AuthPage = () => {
-  AuthRedirect()
+  AuthRedirect();
 
   return (
     <>
@@ -30,7 +30,7 @@ const AuthPage = () => {
         </Card>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default AuthPage
+export default AuthPage;
