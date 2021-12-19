@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import AuthUser from '../../hooks/authUser'
 import { Disclosure } from '@headlessui/react'
