@@ -23,3 +23,9 @@
   top: 3px !important;
   position: absolute !important;
 }
+
+
+model-viewer {
+  width: 600px;
+  height: 600px;
+}

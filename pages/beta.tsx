@@ -40,7 +40,6 @@ const BetaPage = () => {
         <Cube position={[-2, 1, -5]} color="pink" speed={16} />
         <Cube position={[5, 1, -2]} color="pink" speed={16} />
       </group>
-      {/* @ts-expect-error Poorly defined types */}
       <OrbitControls />
     </Canvas>
   );
