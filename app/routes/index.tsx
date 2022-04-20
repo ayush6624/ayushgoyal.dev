@@ -49,7 +49,7 @@ export default function Index() {
               style
               fontMono
             />{' '}
-            and my{' '}
+            and{' '}
             <Link
               href="https://ayushgoyal.dev/ayush-goyal.pdf"
               label="Resume"

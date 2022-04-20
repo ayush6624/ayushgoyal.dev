@@ -468,10 +468,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-sepia:  ;
 }
 
-.static {
-  position: static;
-}
-
 .absolute {
   position: absolute;
 }
@@ -580,63 +576,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .animate-blob {
   -webkit-animation: blob 7s infinite;
           animation: blob 7s infinite;
-}
-
-@-webkit-keyframes move {
-  0% {
-    top: 0px;
-  }
-
-  20% {
-    transform: top: -50px;;
-  }
-
-  40% {
-    transform: top: -100px;;
-  }
-
-  60% {
-    transform: top: -150px;;
-  }
-
-  80% {
-    transform: top: -200px;;
-  }
-
-  100% {
-    transform: top: -250px;;
-  }
-}
-
-@keyframes move {
-  0% {
-    top: 0px;
-  }
-
-  20% {
-    transform: top: -50px;;
-  }
-
-  40% {
-    transform: top: -100px;;
-  }
-
-  60% {
-    transform: top: -150px;;
-  }
-
-  80% {
-    transform: top: -200px;;
-  }
-
-  100% {
-    transform: top: -250px;;
-  }
-}
-
-.animate-text {
-  -webkit-animation: move 5s infinite;
-          animation: move 5s infinite;
 }
 
 .select-all {
