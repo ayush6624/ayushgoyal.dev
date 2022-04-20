@@ -40,6 +40,14 @@ export default function App() {
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
+        <script async defer src="https://a.ayushgoyal.dev/latest.js"></script>
+        <noscript>
+          <img
+            src="https://a.ayushgoyal.dev/noscript.gif"
+            alt=""
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </noscript>
       </body>
     </html>
   );
