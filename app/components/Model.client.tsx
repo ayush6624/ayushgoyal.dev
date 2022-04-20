@@ -30,8 +30,6 @@ const Model = () => (
       camera-target="0m 0m 0m"
       orientation="-10deg -100deg 10deg"
       ar
-      auto-rotate
-      auto-rotate-delay="1000"
       environment-image="https://modelviewer.dev/shared-assets/environments/aircraft_workshop_01_1k.hdr"
       ar-modes="webxr scene-viewer quick-look"
     ></model-viewer>
