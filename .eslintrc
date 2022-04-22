@@ -1,3 +1,7 @@
 {
+  "rules": {
+    "react/jsx-no-target-blank": "off",
+    "jsx-a11y/anchor-has-content": "off"
+  },
   "extends": ["@remix-run/eslint-config", "@remix-run/eslint-config/node"]
 }

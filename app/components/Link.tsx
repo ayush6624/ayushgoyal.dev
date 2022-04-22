@@ -16,7 +16,7 @@ const Link = ({ href, style, fontMono, label }: LinkProps): JSX.Element => {
       target="_blank"
       className={`${
         style
-          ? "text-blue-500 underline underline-offset-2 decoration-sky-500 hover:decoration-dashed"
+          ? "text-blue-500 underline underline-offset-2 decoration-sky-500 hover:decoration-dashed hover:opacity-70"
           : ''
       } ${fontMono ? 'font-mono' : ''}`}
     >

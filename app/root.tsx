@@ -31,11 +31,11 @@ export default function App() {
         <Links />
       </head>
       <body className="flex items-center justify-center w-full max-w-3xl mx-auto">
-        <div className="-z-10">
-          <div className="absolute top-0 bg-purple-300 rounded-full -left-4 w-72 h-72 mix-blend-multiply filter blur-xl opacity-60 md:opacity-70 animate-blob"></div>
-          <div className="absolute top-1/4 md:top-0 delay-[2000ms] bg-pink-300 rounded-full right-16 w-72 h-72 mix-blend-multiply filter blur-xl opacity-60 md:opacity-70 animate-blob"></div>
-          <div className="absolute delay-[4000ms] bg-yellow-300 rounded-full -bottom-8 left-40 w-72 h-72 mix-blend-multiply filter blur-xl opacity-60 md:opacity-70 animate-blob"></div>
-        </div>
+        {/* <div className="-z-10"> */}
+          {/* <div className="absolute top-0 bg-purple-300 rounded-full -left-4 w-72 h-72 mix-blend-multiply filter blur-xl opacity-60 md:opacity-70 animate-blob"></div> */}
+          {/* <div className="absolute top-1/4 md:top-0 delay-[2000ms] bg-pink-300 rounded-full right-16 w-72 h-72 mix-blend-multiply filter blur-xl opacity-60 md:opacity-70 animate-blob"></div> */}
+          {/* <div className="absolute delay-[4000ms] bg-yellow-300 rounded-full -bottom-8 left-40 w-72 h-72 mix-blend-multiply filter blur-xl opacity-60 md:opacity-70 animate-blob"></div> */}
+        {/* </div> */}
         <Outlet />
         <ScrollRestoration />
         <Scripts />
