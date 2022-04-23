@@ -7,10 +7,18 @@ import ContributionGraph from '~/components/Contributions';
 import { useState } from 'react';
 
 export default function Index() {
-  const { githubContributions, music } = useLoaderData<{
-    githubContributions: { contributions: any };
-    music: any;
-  }>();
+  // const { githubContributions, music } = useLoaderData<{
+  //   githubContributions: { contributions: any };
+  //   music: any;
+  // }>();
+  const music = {
+    status: true,
+    data: {
+      name: 'Hey Ya !',
+      artist: 'Clinton Cerejo',
+      img: 'https://lastfm.freetls.fastly.net/i/u/300x300/261113fdaa25d32bfb3d83e9f01cd85a.jpg',
+    },
+  };
 
   const [showModel, setShowModel] = useState<boolean>(false);
 
@@ -111,7 +119,7 @@ export default function Index() {
         <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500 ">
           etc
         </h2>
-        <div>
+        {/* <div>
           {showModel === false ? (
             githubContributions && (
               <ContributionGraph data={githubContributions.contributions} />
@@ -148,7 +156,7 @@ export default function Index() {
               <polyline points="7 7 17 7 17 17"></polyline>
             </svg>
           </button>
-        </div>
+        </div> */}
       </div>
       <div className="flex flex-col gap-4">
         <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500">
@@ -190,14 +198,14 @@ export default function Index() {
   );
 }
 
-export async function loader() {
-  const githubContributions = await fetch(
-    'https://github-contributions-api.jogruber.de/v4/ayush6624?y=last'
-  );
+// export async function loader() {
+//   // const githubContributions = await fetch(
+//   //   'https://github-contributions-api.jogruber.de/v4/ayush6624?y=last'
+//   // );
 
-  const music = await fetch('https://lastfm.cyclic.app/live');
-  return json({
-    githubContributions: await githubContributions.json(),
-    music: await music.json(),
-  });
-}
+//   // const music = await fetch('https://lastfm.cyclic.app/live');
+//   // return json({
+//   //   githubContributions: await githubContributions.json(),
+//   //   music: await music.json(),
+//   // });
+// }
