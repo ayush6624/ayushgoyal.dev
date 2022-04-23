@@ -41,6 +41,7 @@ export default function App() {
         <Scripts />
         <LiveReload />
         <script async defer src="https://a.ayushgoyal.dev/latest.js"></script>
+        <script async src="/auto-events.js" />
         <noscript>
           <img
             src="https://a.ayushgoyal.dev/noscript.gif"

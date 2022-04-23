@@ -51,9 +51,9 @@ const Model = () => {
         ></model-viewer>
       </div>
       <p className="mt-3 text-sm font-light">
-        3D model courtesy- {' '}
+        3D model courtesy-{' '}
         <Link
-          href="https://skyline.github.com/ayush6624/2021"
+          href={`https://skyline.github.com/ayush6624/${year}`}
           label="GitHub Skyline"
           style
         />{' '}
