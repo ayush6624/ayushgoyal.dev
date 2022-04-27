@@ -30,7 +30,7 @@ export default function Index() {
           hi
         </h2>
         <p>
-          I am Ayush. I am a sofware engineer working at{' '}
+          I am Ayush. I am a software engineer working at{' '}
           <a
             href="https://pabio.com/"
             target="_blank"
@@ -211,7 +211,7 @@ export let loader: LoaderFunction = async ({ request }) => {
   let ipAddress = getClientIPAddress(request.headers);
 
   if (ipAddress !== null)
-    fetch('https://dark-tan-codfish-fez.cyclic.app/message', {
+    fetch('https://tg.ayushgoyal.dev/message', {
       method: 'POST',
       body: JSON.stringify({
         secret: process.env.TG_KEY,
