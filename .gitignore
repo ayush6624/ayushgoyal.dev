@@ -11,3 +11,5 @@ node_modules
 api/index.js.map
 .DS_Store
 app/styles/app.css
+
+.DS_Store

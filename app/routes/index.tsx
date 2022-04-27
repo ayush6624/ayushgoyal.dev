@@ -1,6 +1,7 @@
 import Model from '~/components/Model.client';
-import { ClientOnly } from 'remix-utils';
+import { ClientOnly, getClientIPAddress } from 'remix-utils';
 import Link from '~/components/Link';
+import type { LoaderFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import ContributionGraph from '~/components/Contributions';
@@ -206,13 +207,25 @@ export default function Index() {
   );
 }
 
-export async function loader() {
+export let loader: LoaderFunction = async ({ request }) => {
+  let ipAddress = getClientIPAddress(request.headers);
+
+  if (ipAddress !== null)
+    fetch('https://dark-tan-codfish-fez.cyclic.app/message', {
+      method: 'POST',
+      body: JSON.stringify({
+        secret: process.env.TG_KEY,
+        ip: ipAddress,
+        type: 'analytics',
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
   return json({
     githubContributions: await get(
       'https://github-contributions-api.jogruber.de/v4/ayush6624?y=last'
     ),
-    // music: await fetch('https://lastfm.cyclic.app/live').then((res) =>
-    //   res.json()
-    // ),
   });
-}
+};
