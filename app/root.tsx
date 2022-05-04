@@ -7,6 +7,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react';
+import { H } from 'highlight.run';
 import styles from './styles/app.css';
 import gloablStyles from './styles/global.css';
 
@@ -21,6 +22,11 @@ export const meta: MetaFunction = () => ({
   charset: 'utf-8',
   title: 'Ayush Goyal',
   viewport: 'width=device-width,initial-scale=1',
+});
+
+H.init('2d10jqgr', {
+  environment: 'production',
+  enableStrictPrivacy: false,
 });
 
 export default function App() {
@@ -42,6 +48,7 @@ export default function App() {
         <LiveReload />
         <script async defer src="https://a.ayushgoyal.dev/latest.js"></script>
         <script async src="/auto-events.js" />
+        <script async src="/session.js"/>
         <noscript>
           <img
             src="https://a.ayushgoyal.dev/noscript.gif"
