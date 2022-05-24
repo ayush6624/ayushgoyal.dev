@@ -35,8 +35,9 @@ export default function App() {
       <head>
         <Meta />
         <Links />
+        <meta name='description' content="I am Ayush Goyal. I am a software engineering intern working at Microsoft. I'm a senior at DTU (formerly DCE), New Delhi, India."/>
       </head>
-      <body className="flex items-center justify-center w-full max-w-3xl mx-auto">
+      <body className="max-w-2xl p-5 m-10 mx-auto">
         {/* <div className="-z-10"> */}
           {/* <div className="absolute top-0 bg-purple-300 rounded-full -left-4 w-72 h-72 mix-blend-multiply filter blur-xl opacity-60 md:opacity-70 animate-blob"></div> */}
           {/* <div className="absolute top-1/4 md:top-0 delay-[2000ms] bg-pink-300 rounded-full right-16 w-72 h-72 mix-blend-multiply filter blur-xl opacity-60 md:opacity-70 animate-blob"></div> */}
