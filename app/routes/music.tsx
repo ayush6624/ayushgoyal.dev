@@ -29,13 +29,13 @@ const MusicPage = () => {
           I use{' '}
           <span>
             <Link
-              href="https://last.fm/ayush6624"
+              href="https://www.last.fm/user/ayushg1214"
               label="last.fm"
               style
               fontMono
             />{' '}
           </span>
-          to keep a record of my listening history, and also get some cool insights!
+          to keep a record of my listening history and get some cool insights!
         </p>
       </div>
 
