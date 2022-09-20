@@ -5,9 +5,10 @@ export type LinkProps = {
   label?: string;
   style?: boolean;
   fontMono?: boolean;
+  onClick?: (e: any) => void;
 };
 
-const Link = ({ href, style, fontMono, label }: LinkProps): JSX.Element => {
+const Link = ({ href, style, fontMono, label, onClick }: LinkProps): JSX.Element => {
   const isExternal = href.startsWith('http');
 
   return isExternal ? (
@@ -19,6 +20,7 @@ const Link = ({ href, style, fontMono, label }: LinkProps): JSX.Element => {
           ? "text-blue-500 underline underline-offset-2 decoration-sky-500 hover:decoration-dashed hover:opacity-70"
           : ''
       } ${fontMono ? 'font-mono' : ''}`}
+      onClick={onClick}
     >
       {label ?? href?.split('://')?.[1] ?? href}
     </a>
