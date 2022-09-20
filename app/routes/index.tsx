@@ -9,6 +9,14 @@ import { useEffect, useState } from 'react';
 import { get } from '~/utils/cache.server';
 import { NowPlaying } from '~/components/Spotify';
 
+declare global {
+  interface Window {
+    Calendly: {
+      initPopupWidget: (options: { url: string }) => void;
+    };
+  }
+}
+
 export default function Index() {
   const { githubContributions } = useLoaderData<{
     githubContributions: { contributions: any };
@@ -33,11 +41,11 @@ export default function Index() {
         <p>
           I am Ayush Goyal. I am a software engineering intern working at{' '}
           <a
-            href="https://microsoft.com/"
+            href="https://www.usenimbus.com/"
             target="_blank"
             className="underline decoration-dotted"
           >
-            Microsoft
+            Nimbus (YC W22)
           </a>
           . I'm a senior at DTU (formerly DCE), New Delhi, India. I enjoy
           playing with the web and help build and improve developer tooling. You
@@ -77,7 +85,14 @@ export default function Index() {
           schedule a meeting using my{' '}
           <span>
             <Link
-              href="https://calendly.com/ayushg1214/30min"
+              href="https://calendly.com/ayushg1214/30min?hide_gdpr_banner=1"
+              onClick={(e) => {
+                e.preventDefault();
+                window.Calendly.initPopupWidget({
+                  url: 'https://calendly.com/ayushg1214/30min?hide_gdpr_banner=1',
+                });
+                return false;
+              }}
               label="Calendly"
               style
               fontMono
@@ -94,12 +109,23 @@ export default function Index() {
           <li>
             <div>
               <Link
+                href="https://www.usenimbus.com"
+                label="Nimbus (YC W22)"
+                style
+                fontMono
+              />
+              <span className="ordinal">*</span>
+              <p className="text-sm">July 2022 - present</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <Link
                 href="https://microsoft.com"
                 label="Microsoft"
                 style
                 fontMono
               />
-              <span className="ordinal">*</span>
               <p className="text-sm">May 2022 - July 2022</p>
             </div>
           </li>

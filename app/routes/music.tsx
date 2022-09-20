@@ -51,7 +51,7 @@ const MusicPage = () => {
         <iframe
           title="Spotify playlist"
           className="mt-2 border-2"
-          src="https://open.spotify.com/embed/playlist/4oLb9NujCRNlHiyKuZ3uwf?utm_source=generator"
+          src="https://open.spotify.com/embed/playlist/5G1nca5eQ70b6OqweYtvPE?utm_source=generator"
           width="100%"
           height="80"
           frameBorder="0"

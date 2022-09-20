@@ -24,10 +24,12 @@ export const meta: MetaFunction = () => ({
   viewport: 'width=device-width,initial-scale=1',
 });
 
-H.init('2d10jqgr', {
-  environment: 'production',
-  enableStrictPrivacy: false,
-});
+if (process.env.NODE_ENV !== 'development') {
+  H.init('2d10jqgr', {
+    environment: 'production',
+    enableStrictPrivacy: false,
+  });
+}
 
 export default function App() {
   return (
@@ -35,7 +37,14 @@ export default function App() {
       <head>
         <Meta />
         <Links />
-        <meta name='description' content="I am Ayush Goyal. I am a software engineering intern working at Microsoft. I'm a senior at DTU (formerly DCE), New Delhi, India."/>
+        <link
+          href="https://assets.calendly.com/assets/external/widget.css"
+          rel="stylesheet"
+        />
+        <meta
+          name="description"
+          content="I am Ayush Goyal. I am a software engineering intern working at Microsoft. I'm a senior at DTU (formerly DCE), New Delhi, India."
+        />
       </head>
       <body className="max-w-2xl p-5 m-10 mx-auto">
         {/* <div className="-z-10"> */}
@@ -49,7 +58,12 @@ export default function App() {
         <LiveReload />
         <script async defer src="https://a.ayushgoyal.dev/latest.js"></script>
         <script async src="/auto-events.js" />
-        <script async src="/session.js"/>
+        <script async src="/session.js" />
+        <script
+          src="https://assets.calendly.com/assets/external/widget.js"
+          type="text/javascript"
+          async
+        ></script>
         <noscript>
           <img
             src="https://a.ayushgoyal.dev/noscript.gif"
