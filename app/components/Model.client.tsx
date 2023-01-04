@@ -21,13 +21,13 @@ declare global {
 }
 
 const Model = () => {
-  const [year, setYear] = useState(2021);
+  const [year, setYear] = useState(2022);
   return (
     <div>
       <div className="text-sm">
         <label>Select the year: </label>
         <select
-          defaultValue={2021}
+          defaultValue={2022}
           onChange={(e) => setYear(Number(e.currentTarget.value))}
           className="p-1"
         >

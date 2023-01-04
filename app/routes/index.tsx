@@ -39,7 +39,7 @@ export default function Index() {
           hi
         </h1>
         <p>
-          I am Ayush Goyal. I am a software engineering intern working at{' '}
+          I am Ayush Goyal. I am a software engineer working at{' '}
           <a
             href="https://www.usenimbus.com/"
             target="_blank"
