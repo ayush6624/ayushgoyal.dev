@@ -71,7 +71,7 @@ export default function Index() {
             />{' '}
             and{' '}
             <Link
-              href="https://ayushgoyal.dev/ayush-resume.pdf"
+              href="https://ayushgoyal.dev/resume.pdf"
               label="Resume"
               style
               fontMono
