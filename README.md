@@ -1,44 +1,60 @@
-# Welcome to Remix!
+# Modern Landing Page
 
-- [Remix Docs](https://remix.run/docs)
+A minimal, modern landing page built with **Next.js 15** and **Tailwind CSS**.
 
-## Fly Setup
+## Features
 
-1. [Install `flyctl`](https://fly.io/docs/getting-started/installing-flyctl/)
+- ⚡ **Next.js 15** with App Router
+- 🎨 **Tailwind CSS** for styling
+- 📱 **Fully Responsive** design
+- 🌙 **Dark mode** support
+- ⚡ **Lightning fast** performance
+- 🔧 **TypeScript** support
 
-2. Sign up and log in to Fly
+## Getting Started
 
-```sh
-flyctl auth signup
+### Prerequisites
+
+- Node.js 18.17 or later
+- npm or yarn
+
+### Installation
+
+1. Install dependencies:
+```bash
+npm install
 ```
 
-3. Setup Fly. It might ask if you want to deploy, say no since you haven't built the app yet.
-
-```sh
-flyctl launch
-```
-
-## Development
-
-From your terminal:
-
-```sh
+2. Run the development server:
+```bash
 npm run dev
 ```
 
-This starts your app in development mode, rebuilding assets on file changes.
+3. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-## Deployment
+### Build for Production
 
-If you've followed the setup instructions already, all you need to do is run this:
-
-```sh
-npm run deploy
+```bash
+npm run build
+npm start
 ```
 
-You can run `flyctl info` to get the url and ip address of your server.
+## Customization
 
-Check out the [fly docs](https://fly.io/docs/getting-started/node/) for more information.
-Todo:
-bottom right commit hash
-3D orientation
+The landing page is fully customizable:
+
+- Edit `app/page.tsx` to modify the content
+- Update `app/globals.css` for global styles
+- Modify `tailwind.config.js` for custom Tailwind configuration
+- Update metadata in `app/layout.tsx`
+
+## Tech Stack
+
+- **Framework**: Next.js 15
+- **Styling**: Tailwind CSS
+- **Language**: TypeScript
+- **Icons**: Heroicons (inline SVG)
+
+## License
+
+MIT License - feel free to use this template for your projects!
